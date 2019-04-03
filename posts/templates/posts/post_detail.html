@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+        <a href="{% url 'post_list' %}" class="btn btn-info">Back</a>
+        <div class="media">
+            <img src="..." class="mr-3" alt="...">
+        <div class="media-body">
+            <h5 class="mt-0">{{ object.title }}</h5>
+            
+            {{ object.body }}
+        </div>
+        </div>
+        <a href="{% url 'post_update' object.id %}" class="btn btn-info">Edit</a>
+        <a href="{% url 'post_delete' object.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}

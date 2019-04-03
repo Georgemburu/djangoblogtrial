@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in object_list%}
+        <div class="media">
+            <img src="{{post.author.profile_pic.url}}" class="mr-3" alt="...">
+        <div class="media-body">
+            <h5 class="mt-0"><a href="{{post.get_absolute_url}}">{{ post.title }}</a></h5>
+            <small>{{ post.author.firstname }}</small>
+            {{ post.body }}
+        </div>
+        </div>
+    {% endfor %}
+{% endblock %}
